@@ -2,488 +2,338 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+    <title>APS LBS ROBOKRITI 2026</title>
 
-<title>
-APS LBS ROBOKRITI 2026
-</title>
+    <!-- Google Fonts -->
+    https://fonts.googleapis.com
+    https://fonts.gstatic.com
 
-https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-css/style.css
-css/animations.css
-
+    <!-- CSS -->
+    css/style.css
+    css/animations.css
 </head>
 
 <body>
 
-<!-- LOADER -->
+    <!-- Loader -->
+    <div id="loader">
+        <div class="loader-content">
 
-<div id="loader">
+            assets/images/logo.png
 
-<div class="loader-content">
+            <h1>APS LBS ROBOKRITI 2026</h1>
 
-<img
-src="https://i.ibb.co/4ZPrGYz7/Army-Welfare-Education-Society-logo-1.png"
-class="loader-logo"
-alt="logo">
+            <p class="typing-text">
+                INITIALIZING ROBOTICS CORE...
+            </p>
 
-<h1>APS LBS ROBOKRITI 2026</h1>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
 
-<div class="typing-text">
-INITIALIZING ROBOKRITI CORE...
-</div>
-
-<div class="boot-lines">
-
-<p>ROBO RACE ● ONLINE</p>
-<p>ROBO WAR ● ONLINE</p>
-<p>ROBO TUG ● ONLINE</p>
-<p>ROBO SOCCER ● ONLINE</p>
-
-</div>
-
-<div class="loader-bar">
-
-<div class="loader-progress"></div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- NAVBAR -->
-
-<header class="navbar">
-
-<div class="brand">
-
-<img
-src="https://i.ibb.co/4ZPrGYz7/Army-Welfare-Education-Society-logo-1.png"
-alt="logo">
-
-<span>
-APS LBS ROBOKRITI 2026
-</span>
-
-</div>
-
-<button id="menuBtn">
-
-<span></span>
-<span></span>
-<span></span>
-
-</button>
-
-</header>
-
-<!-- MENU -->
-
-<div id="menuOverlay">
-
-#HOME</a>
-events.htmlEVENTS</a>
-rules.htmlRULES</a>
-registration.htmlREGISTRATION</a>
-status.htmlSTATUS</a>
-committee.htmlCOMMITTEE</a>
-help.htmlHELP</a>
-contact.htmlCONTACT</a>
-announcements.htmlANNOUNCEMENTS</a>
-
-</div>
-
-<!-- HERO -->
-
-<section class="hero">
-
-<div class="particles"></div>
-
-<div class="hero-content">
-
-<p class="tag">
-
-APS LBS PRESENTS
-
-</p>
-
-<h1>
-
-APS LBS
-ROBOKRITI 2026
-
-</h1>
-
-<h2>
-
-Build. Battle. Innovate.
-
-</h2>
-
-<p class="description">
-
-The ultimate inter-class robotics competition
-where creativity, strategy and innovation
-come together.
-
-</p>
-
-<div class="buttons">
-
-registration.html
-
-REGISTER NOW
-
-</a>
-
-events.html
-
-EXPLORE EVENTS
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-<section class="arena" id="competitions">
-
-    <div class="section-header">
-
-        <span class="section-tag">
-            ROBOKRITI 2026
-        </span>
-
-        <h2>
-            Competition Arena
-        </h2>
-
-        <p>
-            Challenge your skills across multiple robotics
-            domains and compete with the brightest innovators.
-        </p>
-
+        </div>
     </div>
 
-    <div class="arena-grid">
+    <!-- Scroll Progress -->
+    <div id="progressBar"></div>
 
-        <div class="arena-card">
+    <!-- Navbar -->
+    <header class="navbar">
 
-            <div class="card-icon">
-                🤖
-            </div>
+        <div class="brand">
 
-            <h3>Autonomous Bot</h3>
+            assets/images/logo.png
 
-            <p>
-                Design robots capable of making
-                intelligent decisions independently.
-            </p>
-
-            #
-                Register
-            </a>
-
-        </div>
-
-        <div class="arena-card">
-
-            <div class="card-icon">
-                ⚙️
-            </div>
-
-            <h3>Robo Race</h3>
-
-            <p>
-                Speed, precision and engineering
-                collide on challenging race tracks.
-            </p>
-
-            #
-                Register
-            </a>
-
-        </div>
-
-        <div class="arena-card">
-
-            <div class="card-icon">
-                🎯
-            </div>
-
-            <h3>Line Follower</h3>
-
-            <p>
-                Test your control systems and
-                algorithmic performance.
-            </p>
-
-            #
-                Register
-            </a>
-
-        </div>
-
-        <div class="arena-card">
-
-            <div class="card-icon">
-                🚀
-            </div>
-
-            <h3>Innovation Challenge</h3>
-
-            <p>
-                Present revolutionary ideas and
-                next-generation robotic solutions.
-            </p>
-
-            #
-                Register
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-<!--  -->
-    <section class="about" id="about">
-
-    <div class="about-content">
-
-        <div class="about-text">
-
-            <span class="section-tag">
-                ABOUT THE EVENT
+            <span>
+                APS LBS ROBOKRITI 2026
             </span>
 
-            <h2>What is Robokriti 2026?</h2>
-
-            <p>
-                Robokriti is the flagship robotics and innovation
-                festival of APS LBS, bringing together future
-                engineers, makers, and innovators from across the
-                country.
-            </p>
-
-            <p>
-                Participants compete in cutting-edge robotics
-                challenges, attend workshops, and showcase their
-                engineering talent on a national platform.
-            </p>
-
         </div>
 
-        <div class="stats-grid">
+        <button id="menuBtn" aria-label="Open Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
-            <div class="stat-card">
-                <h3 class="counter" data-target="1000">0</h3>
-                <p>Participants</p>
-            </div>
+    </header>
 
-            <div class="stat-card">
-                <h3 class="counter" data-target="50">0</h3>
-                <p>Schools</p>
-            </div>
+    <!-- Full Screen Menu -->
+    <div id="menuOverlay">
 
-            <div class="stat-card">
-                <h3 class="counter" data-target="15">0</h3>
-                <p>Competitions</p>
-            </div>
+        <nav>
 
-            <div class="stat-card">
-                <h3 class="counter" data-target="20">0</h3>
-                <p>Workshops</p>
-            </div>
+            <a href="index.html">Home</a>
 
-        </div>
+            <a href="events.html">Events</a>
+
+            rules.htmlRules</a>
+
+            <a href="registration.html">Registration</a>
+
+            status.htmlStatus</a>
+
+            committee.htmlCommittee</a>
+
+            help.htmlHelp Desk</a>
+
+            contact.htmlContact</a>
+
+            <a href="events.html">Announcements</a>
+
+        </nav>
 
     </div>
 
-</section>
+    <!-- Hero Section -->
+    <section class="hero">
 
-<!-- ABOUT -->
+        <div class="hero-content">
 
-<section class="section">
+            <p class="tag">
+                APS LBS PRESENTS
+            </p>
 
-<span class="node">
+            <h1>
+                APS LBS ROBOKRITI 2026
+            </h1>
 
-/ NODE_01
+            <h2>
+                Build. Battle. Innovate.
+            </h2>
 
-</span>
+            <p class="description">
+                The ultimate robotics competition where creativity,
+                engineering, technology, and teamwork converge to
+                shape the innovators of tomorrow.
+            </p>
 
-<h2>
+            <div class="hero-buttons">
 
-ABOUT ROBOKRITI
+                <a href="registration.html"
+                   class="btn btn-primary">
+                    Register Now
+                </a>
 
-</h2>
+                <a href="events.html"
+                   class="btn btn-secondary">
+                    Explore Events
+                </a>
 
-<p>
+            </div>
 
-APS LBS ROBOKRITI 2026 is the flagship
-robotics competition of Army Public School
-Lucknow that promotes innovation,
-engineering excellence and teamwork.
+        </div>
 
-</p>
+    </section>
 
-<div class="info-grid">
+    <!-- Competition Arena -->
+    <section class="arena" id="competitions">
 
-<div class="card">
-<h3>Date</h3>
-<p>2 September 2026</p>
-</div>
+        <div class="section-header">
 
-<div class="card">
-<h3>Registration Fee</h3>
-<p>Free</p>
-</div>
+            <span class="section-tag">
+                ROBOKRITI 2026
+            </span>
 
-<div class="card">
-<h3>Team Size</h3>
-<p>Up To 5 Members</p>
-</div>
+            <h2>Competition Arena</h2>
 
-<div class="card">
-<h3>Deadline</h3>
-<p>31 August 2026</p>
-</div>
+            <p>
+                Challenge your skills across multiple robotics
+                domains and compete with the brightest innovators.
+            </p>
 
-</div>
+        </div>
 
-</section>
+        <div class="arena-grid">
 
-<!-- ARENA -->
+            <div class="arena-card">
 
-<section class="section">
+                <div class="card-icon">🤖</div>
 
-<span class="node">
+                <h3>Autonomous Bot</h3>
 
-/ NODE_02
+                <p>
+                    Design robots capable of making intelligent
+                    decisions independently.
+                </p>
 
-</span>
+                <a href="registration.html"
+                   class="arena-btn">
+                    Register
+                </a>
 
-<h2>
+            </div>
 
-COMPETITION ARENA
+            <div class="arena-card">
 
-</h2>
+                <div class="card-icon">⚙️</div>
 
-<div class="arena-grid">
+                <h3>Robo Race</h3>
 
-<div class="card">
-<h3>ROBO RACE</h3>
-<p>Speed • Precision • Control</p>
-</div>
+                <p>
+                    Speed, precision and engineering collide on
+                    challenging race tracks.
+                </p>
 
-<div class="card">
-<h3>ROBO WAR</h3>
-<p>Power • Strategy • Dominance</p>
-</div>
+                <a href="registration.html"
+                   class="arena-btn">
+                    Register
+                </a>
 
-<div class="card">
-<h3>ROBO TUG OF WAR</h3>
-<p>Strength • Endurance • Traction</p>
-</div>
+            </div>
 
-<div class="card">
-<h3>ROBO SOCCER</h3>
-<p>Coming Soon</p>
-</div>
+            <div class="arena-card">
 
-</div>
+                <div class="card-icon">🎯</div>
 
-</section>
+                <h3>Line Follower</h3>
 
-<!-- SYSTEM STATUS -->
+                <p>
+                    Test your control systems and algorithmic
+                    performance.
+                </p>
 
-<section class="section">
+                <a href="registration.html"
+                   class="arena-btn">
+                    Register
+                </a>
 
-<span class="node">
+            </div>
 
-/ NODE_03
+            <div class="arena-card">
 
-</span>
+                <div class="card-icon">🚀</div>
 
-<h2>
+                <h3>Innovation Challenge</h3>
 
-SYSTEM STATUS
+                <p>
+                    Present revolutionary ideas and next-generation
+                    robotic solutions.
+                </p>
 
-</h2>
+                <a href="registration.html"
+                   class="arena-btn">
+                    Register
+                </a>
 
-<div class="status-box">
+            </div>
 
-<p>ROBOKRITI CORE : ONLINE</p>
-<p>EVENTS : 4</p>
-<p>HELP DESK : ACTIVE</p>
-<p>COUNTDOWN : ACTIVE</p>
-<p>REGISTRATION : OPEN</p>
+        </div>
 
-</div>
+    </section>
 
-</section>
+    <!-- About -->
+    <section class="about" id="about">
 
-<!-- COUNTDOWN -->
+        <div class="about-content">
 
-<section class="section">
+            <div class="about-text">
 
-<span class="node">
+                <span class="section-tag">
+                    ABOUT THE EVENT
+                </span>
 
-/ NODE_04
+                <h2>What is Robokriti 2026?</h2>
 
-</span>
+                <p>
+                    Robokriti is the flagship robotics and innovation
+                    festival of APS LBS, bringing together future
+                    engineers, makers and innovators.
+                </p>
 
-<h2>
+            </div>
 
-COMPETITION BEGINS IN
+            <div class="stats-grid">
 
-</h2>
+                <div class="stat-card">
+                    <h3 class="counter" data-target="1000">0</h3>
+                    <p>Participants</p>
+                </div>
 
-<div id="countdown">
+                <div class="stat-card">
+                    <h3 class="counter" data-target="50">0</h3>
+                    <p>Schools</p>
+                </div>
 
-00 : 00 : 00 : 00
+                <div class="stat-card">
+                    <h3 class="counter" data-target="15">0</h3>
+                    <p>Competitions</p>
+                </div>
 
-</div>
+                <div class="stat-card">
+                    <h3 class="counter" data-target="20">0</h3>
+                    <p>Workshops</p>
+                </div>
 
-</section>
+            </div>
 
-<!-- FOOTER -->
+        </div>
 
-<footer>
+    </section>
 
-<h2>
+    <!-- Countdown -->
+    <section class="countdown-section">
 
-APS LBS ROBOKRITI 2026
+        <h2>Competition Begins In</h2>
 
-</h2>
+        <div id="countdown">
 
-<p>
+            <div class="time-box">
+                <span id="days">00</span>
+                <p>Days</p>
+            </div>
 
-Build. Battle. Innovate.
+            <div class="time-box">
+                <span id="hours">00</span>
+                <p>Hours</p>
+            </div>
 
-</p>
+            <div class="time-box">
+                <span id="minutes">00</span>
+                <p>Minutes</p>
+            </div>
 
-<p>
+            <div class="time-box">
+                <span id="seconds">00</span>
+                <p>Seconds</p>
+            </div>
 
-Army Public School
-Lal Bahadur Shastri Marg
-Lucknow
+        </div>
 
-</p>
+    </section>
 
-</footer>
-js/main.jsscript>
-js/loader.jsscript>
-js/particles.jsscript>
-js/arena.jsscript>
-js/stats.jsscript>
+    <!-- Footer -->
+    <footer>
 
+        <h2>APS LBS ROBOKRITI 2026</h2>
+
+        <p>
+            Build. Battle. Innovate.
+        </p>
+
+        <p>
+            Army Public School<br>
+            Lal Bahadur Shastri Marg<br>
+            Lucknow
+        </p>
+
+    </footer>
+
+    <!-- Back To Top -->
+    <button id="backToTop">↑</button>
+
+    <!-- Scripts -->
+    js/main.jsscript>
+    js/loader.jsscript>
+    js/particles.jsscript>
+    js/countdown.jsscript>
+    js/arena.jsscript>
+    js/stats.jsscript>
 
 </body>
 </html>
