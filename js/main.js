@@ -1,202 +1,213 @@
-/* ===========================
+/* ====================================
    APS LBS ROBOKRITI 2026
-   MAIN SCRIPT
-=========================== */
+   MAIN INTERACTIVITY
+==================================== */
 
-/* MENU */
+/* ==========================
+   HAMBURGER MENU
+========================== */
 
-const menuBtn = document.getElementById("menuBtn");
-const menuOverlay = document.getElementById("menuOverlay");
+const menuBtn =
+document.getElementById("menuBtn");
 
-if(menuBtn){
+const menuOverlay =
+document.getElementById("menuOverlay");
+
+if (menuBtn && menuOverlay) {
 
     menuBtn.addEventListener("click", () => {
 
         menuOverlay.classList.toggle("active");
 
-    });
-
-}
-
-/* COUNTDOWN */
-
-const countdown = document.getElementById("countdown");
-
-function updateCountdown(){
-
-    const eventDate =
-    new Date("September 2, 2026 00:00:00");
-
-    const now = new Date();
-
-    const gap = eventDate - now;
-
-    if(gap <= 0){
-
-        countdown.innerHTML =
-        "EVENT IN PROGRESS";
-
-        return;
-    }
-
-    const days =
-    Math.floor(gap / (1000 * 60 * 60 * 24));
-
-    const hours =
-    Math.floor(
-        (gap % (1000 * 60 * 60 * 24))
-        /
-        (1000 * 60 * 60)
-    );
-
-    const minutes =
-    Math.floor(
-        (gap % (1000 * 60 * 60))
-        /
-        (1000 * 60)
-    );
-
-    const seconds =
-    Math.floor(
-        (gap % (1000 * 60))
-        /
-        1000
-    );
-
-    countdown.innerHTML = `
-        ${days}D :
-        ${hours}H :
-        ${minutes}M :
-        ${seconds}S
-    `;
-}
-
-setInterval(updateCountdown,1000);
-
-updateCountdown();
-
-/* LOGO EASTER EGG */
-
-const logo =
-document.querySelector(".brand");
-
-let clickCount = 0;
-
-if(logo){
-
-    logo.addEventListener("click",()=>{
-
-        clickCount++;
-
-        if(clickCount >= 5){
-
-            window.location.href =
-            "hidden/rk-core.html";
-
-        }
-
-        setTimeout(()=>{
-
-            clickCount = 0;
-
-        },3000);
+        menuBtn.classList.toggle("active");
 
     });
 
 }
 
-/* SCROLL PROGRESS */
+/* ==========================
+   CLOSE MENU ON LINK CLICK
+========================== */
+
+const menuLinks =
+document.querySelectorAll("#menuOverlay a");
+
+menuLinks.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        menuOverlay.classList.remove("active");
+
+        menuBtn.classList.remove("active");
+
+    });
+
+});
+
+/* ==========================
+   SCROLL PROGRESS BAR
+========================== */
 
 const progressBar =
-document.createElement("div");
+document.getElementById("progressBar");
 
-progressBar.id = "progressBar";
-
-document.body.appendChild(progressBar);
-
-window.addEventListener("scroll",()=>{
+window.addEventListener("scroll", () => {
 
     const scrollTop =
     document.documentElement.scrollTop;
 
-    const height =
-    document.documentElement.scrollHeight
-    -
+    const scrollHeight =
+    document.documentElement.scrollHeight -
     document.documentElement.clientHeight;
 
     const progress =
-    (scrollTop / height) * 100;
+    (scrollTop / scrollHeight) * 100;
 
-    progressBar.style.width =
-    progress + "%";
+    if (progressBar) {
 
-});
-
-/* BACK TO TOP BUTTON */
-
-const topBtn =
-document.createElement("button");
-
-topBtn.id = "topBtn";
-
-topBtn.innerHTML = "↑";
-
-document.body.appendChild(topBtn);
-
-window.addEventListener("scroll",()=>{
-
-    if(window.scrollY > 400){
-
-        topBtn.classList.add("show");
-
-    }else{
-
-        topBtn.classList.remove("show");
+        progressBar.style.width =
+        progress + "%";
 
     }
 
 });
 
-topBtn.addEventListener("click",()=>{
+/* ==========================
+   BACK TO TOP BUTTON
+========================== */
 
-    window.scrollTo({
+const backToTop =
+document.getElementById("backToTop");
 
-        top:0,
+window.addEventListener("scroll", () => {
 
-        behavior:"smooth"
+    if (!backToTop) return;
+
+    if (window.scrollY > 500) {
+
+        backToTop.classList.add("show");
+
+    } else {
+
+        backToTop.classList.remove("show");
+
+    }
+
+});
+
+if (backToTop) {
+
+    backToTop.addEventListener("click", () => {
+
+        window.scrollTo({
+
+            top: 0,
+            behavior: "smooth"
+
+        });
 
     });
 
+}
+
+/* ==========================
+   SCROLL REVEAL
+========================== */
+
+const revealElements =
+document.querySelectorAll(".reveal");
+
+const revealObserver =
+new IntersectionObserver(
+
+    entries => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add(
+                    "active"
+                );
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold: 0.15
+    }
+
+);
+
+revealElements.forEach(element => {
+
+    revealObserver.observe(element);
+
 });
 
-/* EVENT DAY MODE */
+/* ==========================
+   NAVBAR BACKGROUND
+========================== */
 
-const today =
-new Date();
+const navbar =
+document.querySelector(".navbar");
 
-const day =
-today.getDate();
+window.addEventListener("scroll", () => {
 
-const month =
-today.getMonth() + 1;
+    if (!navbar) return;
 
-const year =
-today.getFullYear();
+    if (window.scrollY > 50) {
 
-if(
-    day === 2 &&
-    month === 9 &&
-    year === 2026
-){
+        navbar.style.background =
+        "rgba(0,0,0,0.85)";
 
-    const heroTitle =
-    document.querySelector(".hero h1");
+    } else {
 
-    if(heroTitle){
-
-        heroTitle.innerHTML =
-        "APS LBS ROBOKRITI 2026 IS LIVE";
+        navbar.style.background =
+        "rgba(0,0,0,0.6)";
 
     }
+
+});
+
+/* ==========================
+   EASTER EGG
+========================== */
+
+const logo =
+document.querySelector(".brand img");
+
+if (logo) {
+
+    let clicks = 0;
+
+    logo.addEventListener("click", () => {
+
+        clicks++;
+
+        if (clicks === 5) {
+
+            alert(
+                "🚀 ROBOKRITI SECRET MODE ACTIVATED!"
+            );
+
+            document.body.style.filter =
+            "hue-rotate(25deg)";
+
+            setTimeout(() => {
+
+                document.body.style.filter =
+                "none";
+
+            }, 4000);
+
+            clicks = 0;
+
+        }
+
+    });
 
 }
