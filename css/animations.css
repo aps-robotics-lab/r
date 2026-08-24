@@ -1,0 +1,77 @@
+/* ===========================
+   GLOBAL ANIMATIONS
+=========================== */
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes glow{
+
+    0%{
+        box-shadow:0 0 5px #D4AF37;
+    }
+
+    50%{
+        box-shadow:
+        0 0 20px #D4AF37,
+        0 0 40px #D4AF37;
+    }
+
+    100%{
+        box-shadow:0 0 5px #D4AF37;
+    }
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+
+    }
+
+}
+
+.card{
+    animation:fadeUp 1s ease;
+}
+
+.loader-logo{
+
+    animation:
+    float 3s infinite ease-in-out;
+
+}
+
+.btn:hover{
+
+    animation:
+    glow 1.2s infinite;
+
+}
