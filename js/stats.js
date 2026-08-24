@@ -1,60 +1,77 @@
-/* ======================
-   COUNTER ANIMATION
-====================== */
+/* ====================================
+   APS LBS ROBOKRITI 2026
+   STATS COUNTER
+==================================== */
 
 const counters =
 document.querySelectorAll(".counter");
 
-const observer =
-new IntersectionObserver(entries => {
+const counterObserver =
+new IntersectionObserver(
 
-    entries.forEach(entry => {
+    entries => {
 
-        if(entry.isIntersecting){
+        entries.forEach(entry => {
+
+            if (!entry.isIntersecting)
+                return;
 
             const counter =
             entry.target;
 
             const target =
-            +counter.dataset.target;
+            parseInt(
+                counter.dataset.target
+            );
 
-            let count = 0;
+            let current = 0;
 
             const increment =
-            target / 100;
+            Math.max(
+                1,
+                Math.ceil(target / 100)
+            );
 
-            const update = () => {
+            function updateCounter() {
 
-                count += increment;
+                current += increment;
 
-                if(count < target){
+                if (current < target) {
 
-                    counter.innerText =
-                    Math.floor(count);
+                    counter.textContent =
+                    current;
 
-                    requestAnimationFrame(update);
+                    requestAnimationFrame(
+                        updateCounter
+                    );
 
-                }else{
+                } else {
 
-                    counter.innerText =
-                    target;
+                    counter.textContent =
+                    target.toLocaleString();
 
                 }
 
-            };
+            }
 
-            update();
+            updateCounter();
 
-            observer.unobserve(counter);
+            counterObserver.unobserve(
+                counter
+            );
 
-        }
+        });
 
-    });
+    },
 
-});
+    {
+        threshold: 0.3
+    }
+
+);
 
 counters.forEach(counter => {
 
-    observer.observe(counter);
+    counterObserver.observe(counter);
 
 });
