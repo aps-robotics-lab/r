@@ -5,7 +5,7 @@
 
 const hero = document.querySelector(".hero");
 
-if(hero){
+if (hero) {
 
     const canvas = document.createElement("canvas");
 
@@ -13,65 +13,80 @@ if(hero){
 
     hero.appendChild(canvas);
 
-    const ctx = canvas.getContext("2d");
+    const ctx =
+    canvas.getContext("2d");
 
-    function resizeCanvas(){
+    function resizeCanvas() {
 
-    canvas.width = hero.clientWidth;
-    canvas.height = hero.clientHeight;
+        canvas.width =
+        hero.clientWidth;
 
-}
+        canvas.height =
+        hero.clientHeight;
+
+    }
 
     resizeCanvas();
 
-    window.addEventListener("resize", resizeCanvas);
-
-    const particleCount =
-    window.innerWidth < 768 ? 40 : 100;
+    window.addEventListener(
+        "resize",
+        resizeCanvas
+    );
 
     const particles = [];
 
-    class Particle{
+    const particleCount =
+    window.innerWidth < 768
+        ? 40
+        : 100;
 
-        constructor(){
+    class Particle {
+
+        constructor() {
 
             this.x =
-            Math.random() * canvas.width;
+            Math.random() *
+            canvas.width;
 
             this.y =
-            Math.random() * canvas.height;
+            Math.random() *
+            canvas.height;
 
             this.radius =
             Math.random() * 2 + 1;
 
             this.speedX =
-            (Math.random() - 0.5) * 0.5;
+            (Math.random() - 0.5) *
+            0.5;
 
             this.speedY =
-            (Math.random() - 0.5) * 0.5;
+            (Math.random() - 0.5) *
+            0.5;
 
         }
 
-        update(){
+        update() {
 
             this.x += this.speedX;
             this.y += this.speedY;
 
-            if(this.x < 0 || this.x > canvas.width){
-
+            if (
+                this.x < 0 ||
+                this.x > canvas.width
+            ) {
                 this.speedX *= -1;
-
             }
 
-            if(this.y < 0 || this.y > canvas.height){
-
+            if (
+                this.y < 0 ||
+                this.y > canvas.height
+            ) {
                 this.speedY *= -1;
-
             }
 
         }
 
-        draw(){
+        draw() {
 
             ctx.beginPath();
 
@@ -86,23 +101,41 @@ if(hero){
             ctx.fillStyle =
             "#D4AF37";
 
+            ctx.shadowBlur = 10;
+            ctx.shadowColor =
+            "#D4AF37";
+
             ctx.fill();
 
         }
 
     }
 
-    for(let i=0;i<particleCount;i++){
+    for (
+        let i = 0;
+        i < particleCount;
+        i++
+    ) {
 
-        particles.push(new Particle());
+        particles.push(
+            new Particle()
+        );
 
     }
 
-    function connectParticles(){
+    function connectParticles() {
 
-        for(let a=0;a<particles.length;a++){
+        for (
+            let a = 0;
+            a < particles.length;
+            a++
+        ) {
 
-            for(let b=a;b<particles.length;b++){
+            for (
+                let b = a;
+                b < particles.length;
+                b++
+            ) {
 
                 const dx =
                 particles[a].x -
@@ -113,15 +146,19 @@ if(hero){
                 particles[b].y;
 
                 const distance =
-                Math.sqrt(dx*dx + dy*dy);
+                Math.sqrt(
+                    dx * dx +
+                    dy * dy
+                );
 
-                if(distance < 120){
+                if (distance < 120) {
 
                     ctx.beginPath();
 
                     ctx.strokeStyle =
                     `rgba(212,175,55,${
-                        1 - distance/120
+                        1 -
+                        distance / 120
                     })`;
 
                     ctx.lineWidth = 0.5;
@@ -146,7 +183,7 @@ if(hero){
 
     }
 
-    function animate(){
+    function animate() {
 
         ctx.clearRect(
             0,
@@ -155,12 +192,15 @@ if(hero){
             canvas.height
         );
 
-        particles.forEach(p => {
+        particles.forEach(
+            particle => {
 
-            p.update();
-            p.draw();
+                particle.update();
 
-        });
+                particle.draw();
+
+            }
+        );
 
         connectParticles();
 
