@@ -17,10 +17,10 @@ if(hero){
 
     function resizeCanvas(){
 
-        canvas.width = window.innerWidth;
-        canvas.height = hero.offsetHeight;
+    canvas.width = hero.clientWidth;
+    canvas.height = hero.clientHeight;
 
-    }
+}
 
     resizeCanvas();
 
