@@ -1,77 +1,269 @@
-/* ===========================
-   GLOBAL ANIMATIONS
-=========================== */
+/* ==========================
+   APS LBS ROBOKRITI 2026
+   ANIMATIONS
+========================== */
 
-@keyframes float{
+/* Loader Progress */
 
-    0%{
-        transform:translateY(0);
+@keyframes loading {
+
+    from {
+        width: 0%;
     }
 
-    50%{
-        transform:translateY(-10px);
-    }
-
-    100%{
-        transform:translateY(0);
+    to {
+        width: 100%;
     }
 
 }
 
-@keyframes glow{
+.loader-progress {
 
-    0%{
-        box-shadow:0 0 5px #D4AF37;
+    animation: loading 3s linear forwards;
+
+}
+
+/* Hero Fade Up */
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+        transform: translateY(40px);
+
     }
 
-    50%{
+    to {
+
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+
+}
+
+.hero-content {
+
+    animation: fadeUp 1.2s ease;
+
+}
+
+/* Gold Glow */
+
+@keyframes glow {
+
+    0% {
+
+        text-shadow:
+        0 0 10px rgba(212,175,55,.4);
+
+    }
+
+    50% {
+
+        text-shadow:
+        0 0 25px rgba(212,175,55,.9);
+
+    }
+
+    100% {
+
+        text-shadow:
+        0 0 10px rgba(212,175,55,.4);
+
+    }
+
+}
+
+.hero h1 {
+
+    animation: glow 3s infinite;
+
+}
+
+/* Floating Effect */
+
+@keyframes float {
+
+    0% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(-10px);
+
+    }
+
+    100% {
+
+        transform: translateY(0);
+
+    }
+
+}
+
+.card-icon {
+
+    animation: float 3s ease-in-out infinite;
+
+}
+
+/* Button Pulse */
+
+@keyframes pulse {
+
+    0% {
+
         box-shadow:
-        0 0 20px #D4AF37,
-        0 0 40px #D4AF37;
-    }
-
-    100%{
-        box-shadow:0 0 5px #D4AF37;
-    }
-
-}
-
-@keyframes fadeUp{
-
-    from{
-
-        opacity:0;
-
-        transform:
-        translateY(30px);
+        0 0 0 0 rgba(212,175,55,.6);
 
     }
 
-    to{
+    70% {
 
-        opacity:1;
+        box-shadow:
+        0 0 0 20px rgba(212,175,55,0);
 
-        transform:
-        translateY(0);
+    }
+
+    100% {
+
+        box-shadow:
+        0 0 0 0 rgba(212,175,55,0);
 
     }
 
 }
 
-.card{
-    animation:fadeUp 1s ease;
-}
+.btn-primary {
 
-.loader-logo{
-
-    animation:
-    float 3s infinite ease-in-out;
+    animation: pulse 2.5s infinite;
 
 }
 
-.btn:hover{
+/* Section Reveal */
 
-    animation:
-    glow 1.2s infinite;
+.reveal {
+
+    opacity: 0;
+    transform: translateY(50px);
+
+    transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+
+}
+
+.reveal.active {
+
+    opacity: 1;
+    transform: translateY(0);
+
+}
+
+/* Arena Card Hover Glow */
+
+.arena-card:hover {
+
+    animation: cardGlow 1.5s infinite alternate;
+
+}
+
+@keyframes cardGlow {
+
+    from {
+
+        box-shadow:
+        0 0 10px rgba(212,175,55,.2);
+
+    }
+
+    to {
+
+        box-shadow:
+        0 0 30px rgba(212,175,55,.5);
+
+    }
+
+}
+
+/* Countdown Bounce */
+
+@keyframes bounce {
+
+    0%,100% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(-8px);
+
+    }
+
+}
+
+.time-box {
+
+    animation: bounce 4s infinite;
+
+}
+
+/* Back To Top */
+
+@keyframes rotateIn {
+
+    from {
+
+        opacity: 0;
+        transform: rotate(-180deg);
+
+    }
+
+    to {
+
+        opacity: 1;
+        transform: rotate(0deg);
+
+    }
+
+}
+
+#backToTop.show {
+
+    display: block;
+    animation: rotateIn .5s ease;
+
+}
+
+/* Navbar Slide */
+
+@keyframes slideDown {
+
+    from {
+
+        opacity: 0;
+        transform: translateY(-100%);
+
+    }
+
+    to {
+
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+
+}
+
+.navbar {
+
+    animation: slideDown .8s ease;
 
 }
