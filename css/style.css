@@ -684,3 +684,44 @@ footer h2{
     cursor:pointer;
 
 }
+.stat-card{
+
+    background:
+    rgba(255,255,255,.05);
+
+    border:
+    1px solid rgba(255,255,255,.1);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    text-align:center;
+
+    transition:.3s;
+
+    backdrop-filter:blur(10px);
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#D4AF37;
+
+    box-shadow:
+    0 10px 30px
+    rgba(212,175,55,.25);
+
+}
+
+.stat-card h3{
+
+    font-size:2.8rem;
+
+    color:#D4AF37;
+
+    margin-bottom:10px;
+
+}
