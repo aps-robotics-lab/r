@@ -562,3 +562,72 @@ footer h2{
     visibility .6s ease;
 
 }
+/* MENU */
+
+#menuOverlay{
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.95);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.4s ease;
+
+    z-index:999;
+
+}
+
+#menuOverlay.active{
+
+    opacity:1;
+    visibility:visible;
+
+}
+
+#menuOverlay nav{
+
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+
+}
+
+#menuOverlay a{
+
+    color:white;
+    text-decoration:none;
+    font-size:2rem;
+
+}
+
+#menuOverlay a:hover{
+
+    color:#D4AF37;
+
+}
+
+/* PROGRESS BAR */
+
+#progressBar{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    height:4px;
+
+    width:0;
+
+    background:#D4AF37;
+
+    z-index:9999;
+
+}
