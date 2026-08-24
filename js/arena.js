@@ -1,15 +1,16 @@
-/* ==========================
-   ARENA CARD ANIMATION
-========================== */
+/* ====================================
+   APS LBS ROBOKRITI 2026
+   ARENA INTERACTIVITY
+==================================== */
 
-const cards =
+const arenaCards =
 document.querySelectorAll(".arena-card");
 
-cards.forEach(card => {
+arenaCards.forEach(card => {
 
     card.addEventListener(
         "mousemove",
-        e => {
+        (e) => {
 
             const rect =
             card.getBoundingClientRect();
@@ -20,17 +21,25 @@ cards.forEach(card => {
             const y =
             e.clientY - rect.top;
 
-            const rotateY =
-            (x / rect.width - 0.5) * 12;
+            const centerX =
+            rect.width / 2;
+
+            const centerY =
+            rect.height / 2;
 
             const rotateX =
-            (0.5 - y / rect.height) * 12;
+            ((centerY - y) / centerY) * 8;
+
+            const rotateY =
+            ((x - centerX) / centerX) * 8;
 
             card.style.transform =
-            `perspective(1000px)
-             rotateX(${rotateX}deg)
-             rotateY(${rotateY}deg)
-             translateY(-10px)`;
+            `
+            perspective(1000px)
+            rotateX(${rotateX}deg)
+            rotateY(${rotateY}deg)
+            translateY(-10px)
+            `;
 
         }
     );
@@ -40,7 +49,12 @@ cards.forEach(card => {
         () => {
 
             card.style.transform =
-            "translateY(0)";
+            `
+            perspective(1000px)
+            rotateX(0deg)
+            rotateY(0deg)
+            translateY(0)
+            `;
 
         }
     );
